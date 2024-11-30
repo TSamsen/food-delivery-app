@@ -1,0 +1,29 @@
+{
+    "restaurant_id": "1",
+    "menu": [
+        {
+            "id": "1",
+            "name": "Pizza1",
+            "price": 1.99,
+            "description": "Delicious cheese pizza"
+        },
+        {
+            "id": "2",
+            "name": "Pizza2",
+            "price": 2.99,
+            "description": "Delicious double cheese pizza"
+        },
+        {
+            "id": "3",
+            "name": "Pizza3",
+            "price": 3.99,
+            "description": "Delicious triple cheese pizza"
+        },
+        {
+            "id": "4",
+            "name": "Pizza4",
+            "price": 4.99,
+            "description": "Delicious cheese cheese pizza"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    " rider ": [
+        {
+            "id": "1",
+            "name": " RiderOne"
+        },
+        {
+            "id": "2",
+            "name": " RiderTwo"
+        },
+        {
+            "id": "3",
+            "name": " RiderThree"
+        }
+    ]
+}
