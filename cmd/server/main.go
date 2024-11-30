@@ -105,5 +105,35 @@ func main() {
 		return c.JSON(http.StatusOK, order)
 	})
 
+	e.POST("/rider/order/pickup", func(c echo.Context) error {
+		request := new(core.PickupConfirmationRequest)
+		if err := c.Bind(request); err != nil {
+			fmt.Printf("Failed to bind request: %v", err)
+			return c.JSON(http.StatusBadRequest, map[string]string{"message": "failed to parse request"})
+		}
+		order, err := services.RiderPickupConfimation(c, kafkaProducer)
+		if err != nil {
+			fmt.Printf("Failed to pickup order: %v", err)
+			return c.JSON(http.StatusBadRequest, map[string]string{"message": "failed to pickup order"})
+		}
+
+		return c.JSON(http.StatusOK, order)
+	})
+
+	e.POST("/rider/order/deliver", func(c echo.Context) error {
+		request := new(core.DeliveryOrderRequest)
+		if err := c.Bind(request); err != nil {
+			fmt.Printf("Failed to bind request: %v", err)
+			return c.JSON(http.StatusBadRequest, map[string]string{"message": "failed to parse request"})
+		}
+		order, err := services.RiderDeliverOrder(c, kafkaProducer)
+		if err != nil {
+			fmt.Printf("Failed to delivered order: %v", err)
+			return c.JSON(http.StatusBadRequest, map[string]string{"message": "failed to delivered order"})
+		}
+
+		return c.JSON(http.StatusOK, order)
+	})
+
 	e.Logger.Fatal(e.Start(":8088"))
 }
