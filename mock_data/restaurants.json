@@ -1,12 +1,12 @@
 {
-    " restaurant ": [
+    "restaurant": [
         {
             "id": "1",
-            "name": " pizza world "
+            "name": "pizza world"
         },
         {
             "id": "2",
-            "name": " wcdonald "
+            "name": "wcdonald"
         }
     ]
 }
